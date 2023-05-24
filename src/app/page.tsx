@@ -3,6 +3,7 @@ import Experience from '@/components/Experience'
 import { Hero } from '@/components/Hero'
 import { Navbar } from '@/components/Navbar'
 import Tech from '@/components/Tech'
+import Work from '@/components/Work'
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <About />
       <Experience />
       <Tech />
+      <Work />
     </div>
   )
 }

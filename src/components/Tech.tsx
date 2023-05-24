@@ -10,18 +10,20 @@ import { textVariant, zoomIn } from '@/utils/motion'
 
 import {
   css,
-  docker,
-  figma,
-  git,
+  expo,
   html,
   javascript,
   mongodb,
+  nestjs,
+  nextjs,
   nodejs,
+  python,
   reactjs,
+  reactnative,
   redux,
   tailwind,
   threejs,
-  typescript,
+  typescript
 } from '@/assets'
 
 const technologies = [
@@ -32,6 +34,10 @@ const technologies = [
   {
     name: 'CSS 3',
     icon: css,
+  },
+  {
+    name: 'Python',
+    icon: python,
   },
   {
     name: 'JavaScript',
@@ -46,6 +52,10 @@ const technologies = [
     icon: reactjs,
   },
   {
+    name: 'Next JS',
+    icon: nextjs,
+  },
+  {
     name: 'Redux Toolkit',
     icon: redux,
   },
@@ -54,29 +64,41 @@ const technologies = [
     icon: tailwind,
   },
   {
+    name: 'Three JS',
+    icon: threejs,
+  },
+  {
     name: 'Node JS',
     icon: nodejs,
+  },
+  {
+    name: 'Nest JS',
+    icon: nestjs,
   },
   {
     name: 'MongoDB',
     icon: mongodb,
   },
   {
-    name: 'Three JS',
-    icon: threejs,
+    name: 'React Native',
+    icon: reactnative,
   },
   {
-    name: 'git',
-    icon: git,
+    name: 'Expo',
+    icon: expo,
   },
-  {
-    name: 'figma',
-    icon: figma,
-  },
-  {
-    name: 'docker',
-    icon: docker,
-  },
+  // {
+  //  name: 'git',
+  //  icon: git,
+  // },
+  // {
+  //  name: 'figma',
+  //  icon: figma,
+  // },
+  // {
+  //  name: 'docker',
+  //  icon: docker,
+  // },
 ]
 
 function Tech() {
