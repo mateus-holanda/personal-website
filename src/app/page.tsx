@@ -2,6 +2,7 @@ import About from '@/components/About'
 import Experience from '@/components/Experience'
 import { Hero } from '@/components/Hero'
 import { Navbar } from '@/components/Navbar'
+import Tech from '@/components/Tech'
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
 
       <About />
       <Experience />
+      <Tech />
     </div>
   )
 }
