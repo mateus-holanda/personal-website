@@ -1,4 +1,4 @@
-export const textVariant = (delay: number) => {
+export function textVariant(delay?: number) {
   return {
     hidden: {
       y: -50,
@@ -10,18 +10,18 @@ export const textVariant = (delay: number) => {
       transition: {
         type: 'spring',
         duration: 1.25,
-        delay,
+        delay: delay || 0,
       },
     },
   }
 }
 
-export const fadeIn = (
+export function fadeIn(
   direction: string,
   type: string,
   delay: number,
   duration: number,
-) => {
+) {
   return {
     hidden: {
       x: direction === 'left' ? 100 : direction === 'right' ? -100 : 0,
@@ -42,7 +42,7 @@ export const fadeIn = (
   }
 }
 
-export const zoomIn = (delay: number, duration: number) => {
+export function zoomIn(delay: number, duration: number) {
   return {
     hidden: {
       scale: 0,
@@ -61,12 +61,12 @@ export const zoomIn = (delay: number, duration: number) => {
   }
 }
 
-export const slideIn = (
+export function slideIn(
   direction: string,
   type: string,
   delay: number,
   duration: number,
-) => {
+) {
   return {
     hidden: {
       x: direction === 'left' ? '-100%' : direction === 'right' ? '100%' : 0,
@@ -80,6 +80,21 @@ export const slideIn = (
         delay,
         duration,
         ease: 'easeOut',
+      },
+    },
+  }
+}
+
+export const staggerContainer = (
+  staggerChildren?: number,
+  delayChildren?: number,
+) => {
+  return {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren,
+        delayChildren: delayChildren || 0,
       },
     },
   }
