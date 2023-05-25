@@ -76,7 +76,7 @@ const projects = [
   },
 ]
 
-function Work() {
+function Projects() {
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -114,4 +114,4 @@ function Work() {
   )
 }
 
-export default SectionWrapper(Work, 'project')
+export default SectionWrapper(Projects, 'projects')

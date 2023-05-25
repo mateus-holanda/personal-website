@@ -1,10 +1,12 @@
 import About from '@/components/About'
+import Contact from '@/components/Contact'
 import Experience from '@/components/Experience'
 import { Hero } from '@/components/Hero'
 import { Navbar } from '@/components/Navbar'
+import Projects from '@/components/Projects'
+import { StarsCanvas } from '@/components/StarsCanvas'
 import Tech from '@/components/Tech'
 import Testimonials from '@/components/Testimonials'
-import Work from '@/components/Work'
 
 export default function Home() {
   return (
@@ -17,8 +19,12 @@ export default function Home() {
       <About />
       <Experience />
       <Tech />
-      <Work />
+      <Projects />
       <Testimonials />
+      <div className="relative z-0">
+        <Contact />
+        <StarsCanvas />
+      </div>
     </div>
   )
 }
