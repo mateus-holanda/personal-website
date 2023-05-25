@@ -3,6 +3,7 @@ import Experience from '@/components/Experience'
 import { Hero } from '@/components/Hero'
 import { Navbar } from '@/components/Navbar'
 import Tech from '@/components/Tech'
+import Testimonials from '@/components/Testimonials'
 import Work from '@/components/Work'
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <Experience />
       <Tech />
       <Work />
+      <Testimonials />
     </div>
   )
 }

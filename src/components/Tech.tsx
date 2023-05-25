@@ -23,7 +23,7 @@ import {
   redux,
   tailwind,
   threejs,
-  typescript
+  typescript,
 } from '@/assets'
 
 const technologies = [
