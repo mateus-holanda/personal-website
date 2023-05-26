@@ -4,7 +4,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
-import { close, logo, menu } from '../assets'
+import { close, menu } from '../assets'
+import profile from '../assets/profile.jpg'
 
 const navbarLinks = [
   {
@@ -47,15 +48,20 @@ export function Navbar() {
           }}
         >
           <Image
-            src={logo}
-            className="w-object-contain w-32"
-            alt="Company Logo"
-            priority
+            src={profile}
+            quality={100}
+            width={64}
+            className="w-object-contain mr-3 rounded-full"
+            alt="Profile picture"
+            // priority
           />
 
-          <p className="text-white flex cursor-pointer text-[20px] font-bold">
+          <p className="text-white cursor-pointer text-[20px] font-bold">
             Mateus Holanda&nbsp;
-            <span className="hidden sm:block">|&nbsp;IT services</span>
+            <br />
+            <span className="hidden sm:block">
+              |&nbsp;&nbsp;Full Stack Developer
+            </span>
           </p>
         </Link>
 
