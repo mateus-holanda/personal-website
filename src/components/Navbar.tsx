@@ -4,31 +4,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
+import { navbarLinks } from '@/constants'
+
 import { close, menu } from '../assets'
 import profile from '../assets/profile.jpg'
-
-const navbarLinks = [
-  {
-    id: 'about',
-    title: 'About',
-  },
-  {
-    id: 'work',
-    title: 'Work',
-  },
-  {
-    id: 'tech',
-    title: 'Tech',
-  },
-  {
-    id: 'projects',
-    title: 'Projects',
-  },
-  {
-    id: 'contact',
-    title: 'Contact',
-  },
-]
 
 export function Navbar() {
   const [active, setActive] = useState('')

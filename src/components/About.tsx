@@ -2,31 +2,13 @@
 
 import { motion } from 'framer-motion'
 
-import { backend, datascience, mobile, web } from '@/assets'
-import { fadeIn, textVariant } from '@/utils/motion'
-
 import { ServiceCard } from './ServiceCard'
 
 import { SectionWrapper } from '@/hoc'
 
-const services = [
-  {
-    title: 'Web Developer',
-    icon: web,
-  },
-  {
-    title: 'React Native Developer',
-    icon: mobile,
-  },
-  {
-    title: 'Backend Developer',
-    icon: backend,
-  },
-  {
-    title: 'Data Scientist',
-    icon: datascience,
-  },
-]
+import { services } from '@/constants'
+
+import { fadeIn, textVariant } from '@/utils/motion'
 
 function About() {
   return (
