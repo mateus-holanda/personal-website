@@ -12,6 +12,7 @@ import docker from './tech/docker.png'
 import expo from './tech/expo.png'
 import figma from './tech/figma.png'
 import git from './tech/git.png'
+import graphql from './tech/graphql.png'
 import html from './tech/html.png'
 import javascript from './tech/javascript.png'
 import mongodb from './tech/mongodb.png'
@@ -47,28 +48,30 @@ export {
   github,
   css,
   docker,
+  expo,
   figma,
   git,
   html,
-  python,
+  graphql,
   javascript,
   mongodb,
-  nodejs,
-  expo,
-  reactjs,
-  nextjs,
   nestjs,
-  redux,
+  nextjs,
+  nodejs,
+  python,
+  reactjs,
   reactnative,
+  redux,
   tailwind,
-  typescript,
   threejs,
-  primer,
+  typescript,
   casadosventos,
   fieldpro,
-  quero,
   fortbrasil,
+  primer,
+  quero,
   carrent,
   jobit,
   tripguide,
 }
+

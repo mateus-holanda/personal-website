@@ -4,12 +4,15 @@ import { motion } from 'framer-motion'
 
 import { SectionWrapper } from '@/hoc'
 
-import { BallCanvas } from './BallCanvas'
-
-import { textVariant } from '@/utils/motion'
+import { slideIn, textVariant } from '@/utils/motion'
 
 import {
   css,
+  docker,
+  expo,
+  figma,
+  git,
+  graphql,
   html,
   javascript,
   mongodb,
@@ -18,19 +21,22 @@ import {
   nodejs,
   python,
   reactjs,
+  reactnative,
   redux,
   tailwind,
   threejs,
-  typescript
+  typescript,
 } from '@/assets'
+
+import { BallCanvas } from './BallCanvas'
 
 const technologies = [
   {
-    name: 'HTML 5',
+    name: 'HTML5',
     icon: html,
   },
   {
-    name: 'CSS 3',
+    name: 'CSS3',
     icon: css,
   },
   {
@@ -46,57 +52,61 @@ const technologies = [
     icon: typescript,
   },
   {
-    name: 'React JS',
+    name: 'ReactJS',
     icon: reactjs,
   },
   {
-    name: 'Next JS',
+    name: 'NextJS',
     icon: nextjs,
   },
   {
-    name: 'Redux Toolkit',
+    name: 'Redux',
     icon: redux,
   },
   {
-    name: 'Tailwind CSS',
+    name: 'TailwindCSS',
     icon: tailwind,
   },
   {
-    name: 'Three JS',
+    name: 'ThreeJS',
     icon: threejs,
   },
   {
-    name: 'Node JS',
+    name: 'NodeJS',
     icon: nodejs,
   },
   {
-    name: 'Nest JS',
+    name: 'NestJS',
     icon: nestjs,
   },
   {
     name: 'MongoDB',
     icon: mongodb,
   },
-  // {
-  //  name: 'React Native',
-  //  icon: reactnative,
-  // },
-  // {
-  //  name: 'Expo',
-  //  icon: expo,
-  // },
-  // {
-  //  name: 'git',
-  //  icon: git,
-  // },
-  // {
-  //  name: 'figma',
-  //  icon: figma,
-  // },
-  // {
-  //  name: 'docker',
-  //  icon: docker,
-  // },
+  {
+    name: 'GraphQL',
+    icon: graphql,
+  },
+  {
+    name: 'React Native',
+    icon: reactnative,
+  },
+  {
+    name: 'Expo',
+    icon: expo,
+  },
+  {
+    name: 'Git',
+    icon: git,
+  },
+  {
+    name: 'Figma',
+    icon: figma,
+  },
+  {
+    name: 'Docker',
+    icon: docker,
+  },
 ]
 
 function Tech() {
@@ -112,17 +122,14 @@ function Tech() {
         </h2>
       </motion.div>
 
-      <div className="flex flex-row flex-wrap justify-center gap-10">
-        {technologies.map((technology, index) => (
-          <div
-            key={technology.name}
-            // variants={zoomIn(0.1 * index, 0.5)}
-            className="h-28 w-28 cursor-grab"
-          >
-            <BallCanvas icon={technology.icon} />
-          </div>
-        ))}
-      </div>
+      <motion.div
+        variants={slideIn('up', 'spring', 1, 2)}
+        className="flex justify-center"
+      >
+        <div className="h-[850px] w-full">
+          <BallCanvas technologies={technologies} />
+        </div>
+      </motion.div>
     </>
   )
 }

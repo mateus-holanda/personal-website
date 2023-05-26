@@ -21,10 +21,8 @@ export default function Home() {
       <Tech />
       <Projects />
       <Testimonials />
-      <div className="relative z-0">
-        <Contact />
-        <StarsCanvas />
-      </div>
+      <Contact />
+      <StarsCanvas />
     </div>
   )
 }

@@ -28,7 +28,7 @@ export function Hero() {
           <p className="mt-2 text-[16px] font-medium text-[#dfd9ff] xs:text-[20px] sm:text-[26px] lg:text-[30px] lg:leading-[40px]">
             <TypeAnimation
               cursor={false}
-              sequence={['I develop', 500, () => setSecondText(true)]}
+              sequence={['I develop', 100, () => setSecondText(true)]}
               repeat={0}
             />
 

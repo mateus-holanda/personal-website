@@ -9,11 +9,11 @@ import { Suspense, useRef } from 'react'
 function Stars() {
   const ref = useRef(null)
 
-  const sphere = random.inSphere(new Float32Array(6000), { radius: 1.2 })
+  const sphere = random.inSphere(new Float32Array(90000), { radius: 5 })
 
   useFrame((state, delta) => {
-    ref.current.rotation.x -= delta / 10
-    ref.current.rotation.y -= delta / 15
+    ref.current.rotation.x -= delta / 40
+    ref.current.rotation.y -= delta / 60
   })
 
   return (

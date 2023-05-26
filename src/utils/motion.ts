@@ -42,25 +42,6 @@ export function fadeIn(
   }
 }
 
-export function zoomIn(delay: number, duration: number) {
-  return {
-    hidden: {
-      scale: 0,
-      opacity: 0,
-    },
-    show: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        type: 'tween',
-        delay,
-        duration,
-        ease: 'easeOut',
-      },
-    },
-  }
-}
-
 export function slideIn(
   direction: string,
   type: string,
