@@ -53,13 +53,12 @@ export function Navbar() {
             width={64}
             className="w-object-contain mr-3 rounded-full"
             alt="Profile picture"
-            // priority
           />
 
           <p className="text-white cursor-pointer text-[20px] font-bold">
             Mateus Holanda&nbsp;
             <br />
-            <span className="hidden sm:block">
+            <span className="hidden font-normal sm:block">
               |&nbsp;&nbsp;Full Stack Developer
             </span>
           </p>

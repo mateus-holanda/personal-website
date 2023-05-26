@@ -23,7 +23,7 @@ export function ServiceCard({ index, title, icon }: ServiceCardProps) {
           options={{ max: 45, scale: 1, speed: 450 }}
           className="flex min-h-[280px] flex-col items-center justify-evenly rounded-[20px] bg-tertiary px-12 py-5"
         >
-          <Image src={icon} alt={title} className="h-16 w-16 object-contain" />
+          <Image src={icon} alt={title} className="h-38 w-38 object-contain" />
 
           <h3 className="text-white text-center text-[20px] font-bold">
             {title}

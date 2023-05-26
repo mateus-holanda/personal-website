@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 
-import { backend, creator, mobile, web } from '@/assets'
+import { backend, datascience, mobile, web } from '@/assets'
 import { fadeIn, textVariant } from '@/utils/motion'
 
 import { ServiceCard } from './ServiceCard'
@@ -24,7 +24,7 @@ const services = [
   },
   {
     title: 'Data Scientist',
-    icon: creator,
+    icon: datascience,
   },
 ]
 

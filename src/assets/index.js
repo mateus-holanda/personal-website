@@ -1,6 +1,6 @@
 import backend from './backend.png'
 import close from './close.svg'
-import creator from './creator.png'
+import datascience from './datascience.png'
 import github from './github.png'
 import logo from './logo.png'
 import menu from './menu.svg'
@@ -38,13 +38,13 @@ import tripguide from './tripguide.png'
 
 export {
   logo,
-  backend,
-  creator,
-  mobile,
-  web,
-  github,
   menu,
   close,
+  web,
+  mobile,
+  backend,
+  datascience,
+  github,
   css,
   docker,
   figma,
@@ -72,4 +72,3 @@ export {
   jobit,
   tripguide,
 }
-
