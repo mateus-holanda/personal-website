@@ -48,10 +48,9 @@ export function Navbar() {
         >
           <Image
             src={logo}
-            width={128}
-            height={128}
-            className="object-contain"
+            className="w-object-contain w-32"
             alt="Company Logo"
+            priority
           />
 
           <p className="text-white flex cursor-pointer text-[20px] font-bold">

@@ -9,7 +9,7 @@ import { Suspense, useRef } from 'react'
 function Stars() {
   const ref = useRef(null)
 
-  const sphere = random.inSphere(new Float32Array(5000), { radius: 1.2 })
+  const sphere = random.inSphere(new Float32Array(6000), { radius: 1.2 })
 
   useFrame((state, delta) => {
     ref.current.rotation.x -= delta / 10

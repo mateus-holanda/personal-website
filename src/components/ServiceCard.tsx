@@ -19,8 +19,8 @@ export function ServiceCard({ index, title, icon }: ServiceCardProps) {
         variants={fadeIn('right', 'spring', 0.5 * index, 0.75)}
         className="green-pink-gradient w-full rounded-[20px] p-[1px] shadow-card"
       >
-        <div
-          // options={{ max: 45, scale: 1, speed: 450 }}
+        <Tilt
+          options={{ max: 45, scale: 1, speed: 450 }}
           className="flex min-h-[280px] flex-col items-center justify-evenly rounded-[20px] bg-tertiary px-12 py-5"
         >
           <Image src={icon} alt={title} className="h-16 w-16 object-contain" />
@@ -28,7 +28,7 @@ export function ServiceCard({ index, title, icon }: ServiceCardProps) {
           <h3 className="text-white text-center text-[20px] font-bold">
             {title}
           </h3>
-        </div>
+        </Tilt>
       </motion.div>
     </Tilt>
   )

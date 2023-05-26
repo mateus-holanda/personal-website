@@ -6,11 +6,11 @@ import { SectionWrapper } from '@/hoc'
 
 import { BallCanvas } from './BallCanvas'
 
-import { textVariant, zoomIn } from '@/utils/motion'
+import { textVariant } from '@/utils/motion'
 
 import {
   css,
-  expo,
+  git,
   html,
   javascript,
   mongodb,
@@ -83,14 +83,14 @@ const technologies = [
     name: 'React Native',
     icon: reactnative,
   },
-  {
-    name: 'Expo',
-    icon: expo,
-  },
   // {
-  //  name: 'git',
-  //  icon: git,
+  //  name: 'Expo',
+  //  icon: expo,
   // },
+  {
+    name: 'git',
+    icon: git,
+  },
   // {
   //  name: 'figma',
   //  icon: figma,
@@ -116,13 +116,13 @@ function Tech() {
 
       <div className="flex flex-row flex-wrap justify-center gap-10">
         {technologies.map((technology, index) => (
-          <motion.div
+          <div
             key={technology.name}
-            variants={zoomIn(0.1 * index, 0.5)}
+            // variants={zoomIn(0.1 * index, 0.5)}
             className="h-28 w-28 cursor-grab"
           >
             <BallCanvas icon={technology.icon} />
-          </motion.div>
+          </div>
         ))}
       </div>
     </>
