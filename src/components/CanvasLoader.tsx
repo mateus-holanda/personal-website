@@ -1,10 +1,21 @@
 import { Html, useProgress } from '@react-three/drei'
+import RingLoader from 'react-spinners/RingLoader'
 
 export function CanvasLoader() {
   const { progress } = useProgress()
 
   return (
-    <Html>
+    <Html
+      as="div"
+      center
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
+      }}
+    >
+      <RingLoader color="#fff" size={70} />
       <span className="canvas-load"></span>
       <p
         style={{
