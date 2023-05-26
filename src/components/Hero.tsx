@@ -1,10 +1,16 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { TypeAnimation } from 'react-type-animation'
 
 import { ComputerCanvas } from './ComputerCanvas'
 
 export function Hero() {
+  const [secondText, setSecondText] = useState(false)
+  const [thirdText, setThirdText] = useState(false)
+  const [fourthText, setFourthText] = useState(false)
+
   return (
     <section className="relative mx-auto h-screen w-full">
       <div className="absolute inset-0 top-[120px] mx-auto flex max-w-7xl flex-row items-start gap-5 px-6 sm:px-16">
@@ -20,9 +26,52 @@ export function Hero() {
           </h1>
 
           <p className="mt-2 text-[16px] font-medium text-[#dfd9ff] xs:text-[20px] sm:text-[26px] lg:text-[30px] lg:leading-[40px]">
-            I develop user interfaces and web applications{' '}
-            <br className="hidden sm:block" /> with React, Node, React Native
-            and Python.
+            <TypeAnimation
+              cursor={false}
+              sequence={['I develop', 500, () => setSecondText(true)]}
+              repeat={0}
+            />
+
+            {secondText && (
+              <TypeAnimation
+                cursor={false}
+                className="text-[#915eff]"
+                sequence={[
+                  ' User Interfaces',
+                  500,
+                  ' Web Applications',
+                  500,
+                  ' Mobile Applications',
+                  500,
+                  ' ',
+                  100,
+                  () => setThirdText(true),
+                ]}
+                repeat={0}
+              />
+            )}
+
+            {thirdText && (
+              <TypeAnimation
+                cursor={false}
+                className="text-[#915eff]"
+                sequence={[
+                  'User Interfaces, Web and Mobile Applications',
+                  500,
+                  () => setFourthText(true),
+                ]}
+                repeat={0}
+              />
+            )}
+
+            {fourthText && (
+              <TypeAnimation
+                cursor={false}
+                className="hidden sm:block"
+                sequence={['with React, Node, React Native and Python.', 500]}
+                repeat={0}
+              />
+            )}
           </p>
         </div>
       </div>

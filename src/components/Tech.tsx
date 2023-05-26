@@ -10,7 +10,6 @@ import { textVariant } from '@/utils/motion'
 
 import {
   css,
-  git,
   html,
   javascript,
   mongodb,
@@ -19,11 +18,10 @@ import {
   nodejs,
   python,
   reactjs,
-  reactnative,
   redux,
   tailwind,
   threejs,
-  typescript,
+  typescript
 } from '@/assets'
 
 const technologies = [
@@ -79,18 +77,18 @@ const technologies = [
     name: 'MongoDB',
     icon: mongodb,
   },
-  {
-    name: 'React Native',
-    icon: reactnative,
-  },
+  // {
+  //  name: 'React Native',
+  //  icon: reactnative,
+  // },
   // {
   //  name: 'Expo',
   //  icon: expo,
   // },
-  {
-    name: 'git',
-    icon: git,
-  },
+  // {
+  //  name: 'git',
+  //  icon: git,
+  // },
   // {
   //  name: 'figma',
   //  icon: figma,
