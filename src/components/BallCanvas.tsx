@@ -62,7 +62,7 @@ export function BallCanvas({ technologies }: BallCanvasProps) {
 
   return (
     <>
-      <div className="text-white absolute right-0 m-20 flex h-8 items-center justify-end rounded-md bg-[#1d1836] font-bold">
+      <div className="text-white violet-gradient absolute right-0 m-20 flex h-8 items-center justify-end rounded-md font-bold">
         {isOpen && techName && <div className="p-3">{techName}</div>}
       </div>
       <Canvas

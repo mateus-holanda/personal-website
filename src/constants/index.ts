@@ -61,7 +61,7 @@ export const services = [
     icon: web,
   },
   {
-    title: 'React Native Developer',
+    title: 'Mobile Developer',
     icon: mobile,
   },
   {

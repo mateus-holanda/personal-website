@@ -4,7 +4,7 @@ import { Tilt } from 'react-tilt'
 
 import { fadeIn } from '@/utils/motion'
 
-import { github } from '@/assets'
+import { github, rocket } from '@/assets'
 
 interface ProjectCardProps {
   index: number
@@ -39,14 +39,24 @@ export function ProjectCard({
             className="h-full w-full rounded-2xl object-cover"
           />
 
-          <div className="card-img_hover absolute inset-0 m-3 flex justify-end">
+          <div className="card-img_hover absolute right-0 top-0 m-3 flex flex-col justify-end gap-1">
             <div
               onClick={() => window.open(sourceCodeUrl, '_blank')}
-              className="black-gradient flex h-10 w-10 cursor-pointer items-center justify-center rounded-full"
+              className="black-gradient flex h-10 w-10 cursor-pointer items-center justify-center rounded-full shadow-lg shadow-black-100"
             >
               <Image
                 src={github}
                 alt="github"
+                className="h-1/2 w-1/2 object-contain"
+              />
+            </div>
+            <div
+              onClick={() => {}}
+              className="green-pink-gradient flex h-10 w-10 cursor-pointer items-center justify-center rounded-full shadow-md shadow-[#bf61ff]"
+            >
+              <Image
+                src={rocket}
+                alt="rocket"
                 className="h-1/2 w-1/2 object-contain"
               />
             </div>

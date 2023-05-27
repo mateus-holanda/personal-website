@@ -5,6 +5,7 @@ import github from './github.png'
 import logo from './logo.png'
 import menu from './menu.svg'
 import mobile from './mobile.png'
+import rocket from './rocket.png'
 import web from './web.png'
 
 import css from './tech/css.png'
@@ -38,14 +39,15 @@ import jobit from './jobit.png'
 import tripguide from './tripguide.png'
 
 export {
-  logo,
-  menu,
-  close,
-  web,
-  mobile,
   backend,
+  close,
   datascience,
   github,
+  logo,
+  menu,
+  mobile,
+  rocket,
+  web,
   css,
   docker,
   expo,
