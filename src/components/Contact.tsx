@@ -103,7 +103,7 @@ function Contact() {
   })
 
   return (
-    <div className="flex flex-col-reverse gap-10 xl:mt-12 xl:flex-row">
+    <div className="flex flex-col-reverse gap-10 overflow-hidden xl:mt-12 xl:flex-row">
       <motion.div
         variants={slideIn('left', 'tween', 0.2, 1)}
         className="flex-[0.75] rounded-2xl bg-black-100 p-8"
@@ -187,7 +187,7 @@ function Contact() {
         className={`flex-column text-white transf ${
           modalIsOpen
             ? 'visible scale-100 duration-500 ease-in'
-            : 'invisible scale-0'
+            : 'invisible hidden scale-0'
         } absolute left-[30%] top-[35%] flex overflow-hidden rounded-3xl border bg-transparent text-center opacity-100 shadow-md backdrop-blur-[50px]`}
         variants={fadeIn('down', 'spring', 0, 2)}
       >

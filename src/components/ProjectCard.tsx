@@ -14,6 +14,8 @@ interface ProjectCardProps {
     name: string
     color: string
   }>
+  isPublic: boolean
+  status: string
   image: StaticImageData
   sourceCodeUrl: string
 }
@@ -23,6 +25,8 @@ export function ProjectCard({
   name,
   description,
   tags,
+  isPublic,
+  status,
   image,
   sourceCodeUrl,
 }: ProjectCardProps) {
@@ -66,6 +70,15 @@ export function ProjectCard({
         <div className="mt-5">
           <h3 className="text-white text-[24px] font-bold">{name}</h3>
           <p className="mt-2 text-[14px] text-secondary">{description}</p>
+        </div>
+
+        <div className="mt-4 flex flex-wrap gap-2">
+          <p className="green-darkpink-gradient py-1/2 rounded bg-blue-900 px-2 text-sm font-medium text-blue-300">
+            {isPublic ? 'Public' : 'Private'} Repo
+          </p>
+          <p className="green-darkpink-gradient py-1/2 rounded bg-blue-900 px-2 text-sm font-medium text-blue-300">
+            {status}
+          </p>
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2">

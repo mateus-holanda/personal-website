@@ -39,6 +39,8 @@ function Projects() {
             name={project.name}
             description={project.description}
             tags={project.tags}
+            isPublic={project.isPublic}
+            status={project.status}
             image={project.image}
             sourceCodeUrl={project.sourceCodeUrl}
           />
