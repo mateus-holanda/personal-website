@@ -1,59 +1,109 @@
 'use client'
 
 import emailjs from '@emailjs/browser'
+import { zodResolver } from '@hookform/resolvers/zod'
 import { motion } from 'framer-motion'
-import { FormEvent, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { useForm } from 'react-hook-form'
+import PulseLoader from 'react-spinners/PulseLoader'
+import { z } from 'zod'
 
 import { SectionWrapper } from '@/hoc'
 
+import AnimatedCheckIcon from './AnimatedCheckIcon'
 import { EarthCanvas } from './EarthCanvas'
 
-import { slideIn } from '@/utils/motion'
+import { fadeIn, slideIn } from '@/utils/motion'
+
+const sendMessageFormSchema = z.object({
+  name: z.string().nonempty('Please, inform you name.'),
+  email: z
+    .string()
+    .nonempty('Please, inform you e-mail.')
+    .email('Please, inform a valid e-mail.')
+    .toLowerCase(),
+  message: z.string().nonempty('Please, write a message.'),
+})
+
+const defaultValues = {
+  name: '',
+  email: '',
+  message: '',
+}
+
+type SendMessageFormData = z.infer<typeof sendMessageFormSchema>
 
 function Contact() {
+  const {
+    reset,
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<SendMessageFormData>({
+    resolver: zodResolver(sendMessageFormSchema),
+    defaultValues,
+  })
+
   const formRef = useRef<HTMLFormElement>(null)
 
   const [isLoading, setIsLoading] = useState(false)
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
+  const [modalIsOpen, setModalIsOpen] = useState(false)
 
-  function handleSubmitForm(event: FormEvent) {
-    event.preventDefault()
+  const modalRef = useRef<HTMLDivElement>(null)
 
+  function handleClickOutsideModal(event: Event) {
+    if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+      setModalIsOpen(false)
+    }
+  }
+
+  function timeout(delay: number) {
+    // eslint-disable-next-line promise/param-names
+    return new Promise((res) => setTimeout(res, delay))
+  }
+
+  async function handleSubmitForm(data: SendMessageFormData) {
     setIsLoading(true)
+
+    console.log(data)
 
     try {
       if (process.env) {
-        emailjs.send(
+        await emailjs.send(
           process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
           process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
           {
-            from_name: name,
+            from_name: data.name,
             to_name: 'Mateus',
-            from_email: email,
+            from_email: data.email,
             to_email: 'mateus23ita@gmail.com',
-            message,
+            message: data.message,
           },
           process.env.NEXT_PUBLIC_EMAILJS_KEY,
         )
 
-        alert('Thank you. I will get back to you as soon as possible.')
+        await timeout(1000)
+        reset(defaultValues)
+
+        setModalIsOpen(true)
       }
     } catch (error) {
       console.log(error)
       alert('Something went wrong. Please, try again later.')
     } finally {
       setIsLoading(false)
-
-      setName('')
-      setEmail('')
-      setMessage('')
     }
   }
 
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutsideModal, true)
+    return () => {
+      document.removeEventListener('click', handleClickOutsideModal, true)
+    }
+  })
+
   return (
-    <div className="flex flex-col-reverse gap-10 overflow-hidden xl:mt-12 xl:flex-row">
+    <div className="flex flex-col-reverse gap-10 xl:mt-12 xl:flex-row">
       <motion.div
         variants={slideIn('left', 'tween', 0.2, 1)}
         className="flex-[0.75] rounded-2xl bg-black-100 p-8"
@@ -67,50 +117,60 @@ function Contact() {
 
         <form
           ref={formRef}
-          onSubmit={handleSubmitForm}
+          onSubmit={handleSubmit(handleSubmitForm)}
           className="mt-12 flex flex-col gap-8"
         >
-          <label className="flex flex-col">
+          <label className="flex flex-col" htmlFor="name">
             <span className="text-white mb-4 font-medium">Your Name</span>
             <input
               type="text"
-              name="name"
-              value={name}
               placeholder="What's your name?"
-              onChange={(e) => setName(e.target.value)}
               className="text-white outlined-none rounded-lg border-none bg-tertiary px-6 py-4 font-medium placeholder:text-secondary"
+              {...register('name')}
             />
+            {errors.name && (
+              <span className="ml-2 mt-2 text-[14px] font-semibold text-red-500">
+                {errors.name.message}
+              </span>
+            )}
           </label>
 
-          <label className="flex flex-col">
+          <label className="flex flex-col" htmlFor="email">
             <span className="text-white mb-4 font-medium">Your E-mail</span>
             <input
               type="email"
-              name="email"
-              value={email}
               placeholder="Your best e-mail"
-              onChange={(e) => setEmail(e.target.value)}
               className="text-white outlined-none rounded-lg border-none bg-tertiary px-6 py-4 font-medium placeholder:text-secondary"
+              {...register('email')}
             />
+            {errors.email && (
+              <span className="ml-2 mt-2 text-[14px] font-semibold text-red-500">
+                {errors.email.message}
+              </span>
+            )}
           </label>
 
-          <label className="flex flex-col">
+          <label className="flex flex-col" htmlFor="message">
             <span className="text-white mb-4 font-medium">Your Message</span>
             <textarea
               rows={7}
-              name="message"
-              value={message}
               placeholder="Let's get in touch and hopefully we can work together!"
-              onChange={(e) => setMessage(e.target.value)}
               className="text-white outlined-none rounded-lg border-none bg-tertiary px-6 py-4 font-medium placeholder:text-secondary"
+              {...register('message')}
             />
+            {errors.message && (
+              <span className="ml-2 mt-2 text-[14px] font-semibold text-red-500">
+                {errors.message.message}
+              </span>
+            )}
           </label>
 
           <button
             type="submit"
-            className="text-white w-fit rounded-xl bg-[#2765a3] px-8 py-3 font-bold shadow-md shadow-primary outline-none hover:bg-[#3384d4]"
+            disabled={isLoading}
+            className="text-white w-fit rounded-xl bg-[#2765a3] px-8 py-3 font-bold shadow-md shadow-primary outline-none hover:bg-[#3384d4] disabled:bg-[#2765a3]"
           >
-            {isLoading ? 'Sending...' : 'Send'}
+            {isLoading ? <PulseLoader color="#fff" size={8} /> : 'Send'}
           </button>
         </form>
       </motion.div>
@@ -120,6 +180,37 @@ function Contact() {
         className="h-[350px] md:h-[550px] xl:h-auto xl:flex-1"
       >
         <EarthCanvas />
+      </motion.div>
+
+      <motion.div
+        ref={modalRef}
+        className={`flex-column text-white transf ${
+          modalIsOpen
+            ? 'visible scale-100 duration-500 ease-in'
+            : 'invisible scale-0'
+        } absolute left-[30%] top-[35%] flex overflow-hidden rounded-3xl border bg-transparent text-center opacity-100 shadow-md backdrop-blur-[50px]`}
+        variants={fadeIn('down', 'spring', 0, 2)}
+      >
+        <button
+          onClick={() => setModalIsOpen(false)}
+          className="z-1 absolute right-0 top-0 flex h-11 w-11 cursor-pointer items-center justify-center rounded-bl-2xl bg-tertiary p-2 text-[30px] font-extrabold"
+        >
+          X
+        </button>
+        <div className="items-center justify-center px-24 py-10">
+          <h1 className="text-[48px] font-bold">Confirmation</h1>
+          <div className="mt-8 flex flex-col text-[18px] font-medium leading-4">
+            <span>Your message has been sent.</span>
+            <br />
+            <span>I&apos;ll reply as soon as possible.</span>
+            <br />
+            <span>Thank you!</span>
+          </div>
+
+          <div className="mt-8 flex justify-center">
+            <AnimatedCheckIcon />
+          </div>
+        </div>
       </motion.div>
     </div>
   )

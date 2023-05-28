@@ -24,7 +24,7 @@ function Tech() {
       </motion.div>
 
       <motion.div
-        variants={slideIn('up', 'spring', 1, 2)}
+        variants={slideIn('up', 'spring', 0.3, 2)}
         className="flex justify-center"
       >
         <div className="h-[1000px] w-full">
