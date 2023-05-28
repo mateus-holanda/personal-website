@@ -5,6 +5,7 @@ import github from './github.png'
 import logo from './logo.png'
 import menu from './menu.svg'
 import mobile from './mobile.png'
+import quotemark from './quotemark.png'
 import rocket from './rocket.png'
 import web from './web.png'
 
@@ -46,6 +47,7 @@ export {
   logo,
   menu,
   mobile,
+  quotemark,
   rocket,
   web,
   css,

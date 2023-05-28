@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
+import { quotemark } from '@/assets'
 import { fadeIn } from '@/utils/motion'
 
 interface TestimonialCardProps {
@@ -25,9 +26,11 @@ export function TestimonialCard({
       variants={fadeIn('', 'spring', 0.5 * index, 0.75)}
       className="w-full rounded-3xl bg-black-200 p-10 xs:w-[320px]"
     >
-      <p className="text-white text-[48px] font-black">&quot;</p>
+      <p className="text-white text-[48px] font-black">
+        <Image src={quotemark} alt="quote mark" width={64} />
+      </p>
 
-      <div className="mt-1">
+      <div className="mt-4">
         <p className="text-white text-[18px] tracking-wider">{description}</p>
 
         <div className="mt-7 flex items-center justify-between gap-1">

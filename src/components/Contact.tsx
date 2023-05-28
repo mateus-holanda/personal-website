@@ -16,10 +16,10 @@ import { EarthCanvas } from './EarthCanvas'
 import { fadeIn, slideIn } from '@/utils/motion'
 
 const sendMessageFormSchema = z.object({
-  name: z.string().nonempty('Please, inform you name.'),
+  name: z.string().nonempty('Please, inform your name.'),
   email: z
     .string()
-    .nonempty('Please, inform you e-mail.')
+    .nonempty('Please, inform your e-mail.')
     .email('Please, inform a valid e-mail.')
     .toLowerCase(),
   message: z.string().nonempty('Please, write a message.'),
@@ -168,7 +168,7 @@ function Contact() {
           <button
             type="submit"
             disabled={isLoading}
-            className="text-white w-fit rounded-xl bg-[#2765a3] px-8 py-3 font-bold shadow-md shadow-primary outline-none hover:bg-[#3384d4] disabled:bg-[#2765a3]"
+            className="text-white w-fit rounded-xl bg-[#2765a3] px-8 py-3 font-bold shadow-md shadow-[#1a446d] outline-none hover:bg-[#3384d4] disabled:bg-[#2765a3]"
           >
             {isLoading ? <PulseLoader color="#fff" size={8} /> : 'Send'}
           </button>
