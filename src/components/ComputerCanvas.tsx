@@ -65,6 +65,8 @@ export function ComputerCanvas() {
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
+          autoRotate
+          autoRotateSpeed={1}
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}

@@ -27,12 +27,13 @@ function About() {
         variants={fadeIn('', '', 0.1, 1)}
         className="mt-4 max-w-4xl text-[17px] leading-[30px] text-secondary"
       >
-        I&apos;m a full stack software developer with experience in Typescript,
-        Javascript and Python, and expertise in frameworks such as React,
-        Next.js, Three.js, React Native and Node.js. I&apos;m a quick learner
-        and collaborate closely with clients to create efficient, scalable and
-        user-friendly solutions that solve real-world problems. Let&apos;s work
-        together to bring your ideas to life!
+        I&apos;m a full stack software developer with 5 years of experience in
+        Typescript, Javascript and Python, and expertise with the stack React,
+        React Native and Node.js, as well as frameworks such as Next.js,
+        Nest.js, Three.js and Jest. I&apos;m a quick learner and collaborate
+        closely with clients to create efficient, scalable and user-friendly
+        solutions that solve real-world problems. Let&apos;s work together to
+        bring your ideas to life!
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">

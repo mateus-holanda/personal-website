@@ -35,9 +35,14 @@ import fortbrasil from './company/fortbrasil.png'
 import primer from './company/primer.png'
 import quero from './company/quero.png'
 
-import carrent from './carrent.png'
-import jobit from './jobit.png'
-import tripguide from './tripguide.png'
+import copa from './copa.png'
+import esports from './esports.png'
+import habits from './habits.png'
+import timemachine from './timemachine.png'
+
+import gustavostein from './coworkers/gustavostein.png'
+import ricardosodre from './coworkers/ricardosodre.png'
+import robertooikawa from './coworkers/robertooikawa.png'
 
 export {
   backend,
@@ -74,8 +79,12 @@ export {
   fortbrasil,
   primer,
   quero,
-  carrent,
-  jobit,
-  tripguide,
+  copa,
+  esports,
+  habits,
+  timemachine,
+  gustavostein,
+  ricardosodre,
+  robertooikawa,
 }
 

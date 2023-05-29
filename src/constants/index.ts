@@ -1,19 +1,21 @@
 import {
   backend,
-  carrent,
   casadosventos,
+  copa,
   css,
   datascience,
   docker,
+  esports,
   expo,
   fieldpro,
   figma,
   fortbrasil,
   git,
   graphql,
+  gustavostein,
+  habits,
   html,
   javascript,
-  jobit,
   mobile,
   mongodb,
   nestjs,
@@ -25,9 +27,11 @@ import {
   reactjs,
   reactnative,
   redux,
+  ricardosodre,
+  robertooikawa,
   tailwind,
   threejs,
-  tripguide,
+  timemachine,
   typescript,
   web,
 } from '@/assets'
@@ -48,6 +52,10 @@ export const navbarLinks = [
   {
     id: 'projects',
     title: 'Projects',
+  },
+  {
+    id: 'testimonials',
+    title: 'Testimonials',
   },
   {
     id: 'contact',
@@ -81,9 +89,9 @@ export const experiences = [
     linkedinUrl: 'https://www.linkedin.com/company/sayprimer/',
     title: 'Full Stack Developer',
     roles: [
-      "Developed new features to the company's website to improve the user experience and increase the adoption of the product using React, NodeJS, Sequelize",
-      'Integrated third-party applications such as Apollo, Charm and SEMRush to the product',
-      "Maintenance of the company's data on Google Cloud BigQuery",
+      "Develop new features to the company's website to improve the user experience and increase the adoption of the product using React, NodeJS and Sequelize as ORM",
+      'Integration of third-party applications APIs to the product such as Apollo, Charm.io and SEMRush',
+      "Management of user's permission on Google Cloud IAM and data maintenance on Google Cloud BigQuery",
     ],
     icon: primer,
     iconBg: '#fff',
@@ -95,11 +103,11 @@ export const experiences = [
       'https://www.linkedin.com/company/casa-dos-ventos-energias-renov-veis/',
     title: `React.js Developer & \n Data Engineer`,
     roles: [
-      'Maintenance of an internal web application using vanilla Javascript, PHP, Postgis and Postgres',
-      'Migration to React and Node for better performance and cleaner, easier to maintain code',
-      'Creation of a database infrastructure from scratch using Google Cloud Platform and tools such as Cloud Functions, Cloud Run and Big Query',
-      'Make a complete automate database from several sources for energy trading in the brazilian market, using Python, Flask and GCP',
-      'Write prediction models using ML algorithms to predict prices in the brazilian energy market',
+      'Maintenance of an internal web application in vanilla Javascript, PHP, Postgis and Postgres',
+      'Migration to React and Node for better performance, componentization and cleaner, easier to maintain code',
+      'Creation of a database architecture from scratch using Google Cloud Platform and tools such as CLoud Storage, Cloud Functions, Cloud Run and BigQuery',
+      'Make a complete automate database from several sources for energy trading in the Brazilian market, using Python and Flask',
+      'Write prediction models using ML algorithms to predict prices in the Brazilian energy market',
     ],
     icon: casadosventos,
     iconBg: '#fff',
@@ -110,10 +118,9 @@ export const experiences = [
     linkedinUrl: 'https://www.linkedin.com/company/fieldproag/',
     title: 'Node.js Developer',
     roles: [
-      'Developed an application for internal use by employees that monitors the location and status of the company’s products using ReactJS, Redux, NodeJS and MongoDB',
-      'Developed the company’s website in React',
-      'Developed a Landing Page to attract qualified leads using vanilla Javascript',
-      'Developed the company’s mobile application as PWA, with React',
+      'Develop an application for internal use by employees for quality assurance and location of the company’s products using React, Redux, Node and MongoDB',
+      'Develop the company’s website in Desktop and mobile as PWA in React',
+      'Develop Landing Pages in Javascript to attract qualified leads',
     ],
     icon: fieldpro,
     iconBg: '#fff',
@@ -126,7 +133,7 @@ export const experiences = [
     roles: [
       'Create and manage ads on paid social media (Facebook and Instagram)',
       "Learn the company's practices on SEO, SEM, CRM, Google AdWords and Google Analytics",
-      "Increase qualified traffic and conversion rates on the company's website",
+      "Increase qualified traffic and conversion rates on the company's website using practices of Growth Marketing",
       "Access the company's database, create queries and extract relevant reports for B2B analyses and report to Key Accounts",
     ],
     icon: quero,
@@ -138,9 +145,9 @@ export const experiences = [
     linkedinUrl: 'https://www.linkedin.com/company/fortbrasil/',
     title: 'Business Intelligence Analyst',
     roles: [
-      'Worked with Big Data using Python',
-      "Analysed clients' profiles and divided them in similar behavior groups using K-means clustering",
-      "Reduced company's costs by filtering text messages via SMS with new sales and special deals to the right clients",
+      'Work with the entire data history of the company using Big Data techniques with Python',
+      "Analyse clients' profiles and divided them in similar behavior groups using K-means clustering",
+      "Reduce company's costs by filtering text messages via SMS targetting the right clients with new sales and special deals",
     ],
     icon: fortbrasil,
     iconBg: '#fff',
@@ -228,72 +235,143 @@ export const technologies = [
 
 export const projects = [
   {
-    name: 'Car Rent',
+    name: 'Time Machine',
     description:
-      'Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.',
+      'Web and mobile platform to add photos, videos and description of your most valuable memories and create a timeline that you can share with your friends or keep it private just for you.',
     tags: [
       {
         name: 'react',
         color: 'blue-text-gradient',
       },
       {
-        name: 'mongodb',
+        name: 'reactnative',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'node',
         color: 'green-text-gradient',
       },
       {
+        name: 'next',
+        color: 'orange-text-gradient',
+      },
+      {
         name: 'tailwind',
+        color: 'gold-text-gradient',
+      },
+      {
+        name: 'fastify',
+        color: 'violet-text-gradient',
+      },
+    ],
+    isPublic: true,
+    status: 'Active',
+    image: timemachine,
+    sourceCodeUrl: 'https://github.com/mateus-holanda/time-machine',
+  },
+  {
+    name: 'E-game Duos',
+    description:
+      'Web and mobile-based platform that allows users to post their availability and personal contacts on different online games and search for duo partners to play.',
+    tags: [
+      {
+        name: 'react',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'reactnative',
         color: 'pink-text-gradient',
+      },
+      {
+        name: 'node',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'vite',
+        color: 'orange-text-gradient',
+      },
+      {
+        name: 'tailwind',
+        color: 'gold-text-gradient',
+      },
+      {
+        name: 'express',
+        color: 'violet-text-gradient',
       },
     ],
     isPublic: true,
     status: 'Less active',
-    image: carrent,
-    sourceCodeUrl: 'https://github.com/',
+    image: esports,
+    sourceCodeUrl: 'https://github.com/mateus-holanda/esports-teams',
   },
   {
-    name: 'Job IT',
+    name: 'Daily Habits',
     description:
-      'Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.',
+      'An app built for both Desktop and Mobile platforms to add and keep track of your activities during your day. Highly performatic and focused on user accessibility using the Radix UI library.',
     tags: [
       {
         name: 'react',
         color: 'blue-text-gradient',
       },
       {
-        name: 'restapi',
+        name: 'reactnative',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'node',
         color: 'green-text-gradient',
       },
       {
-        name: 'scss',
-        color: 'pink-text-gradient',
+        name: 'vite',
+        color: 'orange-text-gradient',
+      },
+      {
+        name: 'tailwind',
+        color: 'gold-text-gradient',
+      },
+      {
+        name: 'fastify',
+        color: 'violet-text-gradient',
       },
     ],
-    isPublic: false,
-    status: 'Active',
-    image: jobit,
-    sourceCodeUrl: 'https://github.com/',
+    isPublic: true,
+    status: 'Less active',
+    image: habits,
+    sourceCodeUrl: 'https://github.com/mateus-holanda/habits-app',
   },
   {
-    name: 'Trip Guide',
+    name: 'Copa',
     description:
-      'A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.',
+      'A project that uses Google OAuth authentication to create all sorts of pools with your group of friends to bet on the stats of soccer matches (score, penalties, yellow and red cards etc).',
     tags: [
       {
-        name: 'nextjs',
+        name: 'react',
         color: 'blue-text-gradient',
       },
       {
-        name: 'supabase',
+        name: 'reactnative',
+        color: 'pink-text-gradient',
+      },
+      {
+        name: 'node',
         color: 'green-text-gradient',
       },
       {
-        name: 'css',
-        color: 'pink-text-gradient',
+        name: 'next',
+        color: 'orange-text-gradient',
+      },
+      {
+        name: 'tailwind',
+        color: 'gold-text-gradient',
+      },
+      {
+        name: 'fastify',
+        color: 'violet-text-gradient',
       },
     ],
     isPublic: true,
     status: 'Highly active',
-    image: tripguide,
+    image: copa,
     sourceCodeUrl: 'https://github.com/',
   },
 ]
@@ -301,26 +379,26 @@ export const projects = [
 export const testimonials = [
   {
     description:
-      'I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.',
-    name: 'Sara Lee',
-    designation: 'CFO',
-    company: 'Acme Co',
-    image: 'https://randomuser.me/api/portraits/women/4.jpg',
+      'Mateus was a key player during the early stages of the company and developed a high-quality application for our employees to use.',
+    name: 'Ricardo Sodre',
+    designation: 'CEO',
+    company: 'FieldPro',
+    image: ricardosodre,
   },
   {
     description:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: 'Chris Brown',
-    designation: 'COO',
-    company: 'DEF Corp',
-    image: 'https://randomuser.me/api/portraits/men/5.jpg',
-  },
-  {
-    description:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: 'Lisa Wang',
+      "Mateus' work was extremely important for our newly formed sales team. Without him, we wouldn't have grown so quickly.",
+    name: 'Roberto Oikawa',
     designation: 'CTO',
-    company: '456 Enterprises',
-    image: 'https://randomuser.me/api/portraits/women/6.jpg',
+    company: 'Casa dos Ventos',
+    image: robertooikawa,
+  },
+  {
+    description:
+      "After Mateus optimized our paid social campaigns, our traffic increased by 30%. We can't thank him enough!",
+    name: 'Gustado Stein',
+    designation: 'Head of Growth',
+    company: 'Quero Educação',
+    image: gustavostein,
   },
 ]

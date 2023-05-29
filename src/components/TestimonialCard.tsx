@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 
 import { quotemark } from '@/assets'
 import { fadeIn } from '@/utils/motion'
@@ -10,7 +10,7 @@ interface TestimonialCardProps {
   company: string
   designation: string
   description: string
-  image: string
+  image: StaticImageData
 }
 
 export function TestimonialCard({

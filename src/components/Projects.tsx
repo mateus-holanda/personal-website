@@ -27,7 +27,11 @@ function Projects() {
           variants={fadeIn('', '', 0.1, 1)}
           className="mt-3 max-w-3xl text-[17px] leading-[30px] text-secondary"
         >
-          Teste teste teste teste teste
+          The following public projects showcases my skills and experience
+          through real-world examples of my work. Each project is briefly
+          described with links to code repositories and live demos in it. It
+          reflects my ability to solve complex problems, build scalable apps and
+          work with different technologies effectively.
         </motion.p>
       </div>
 

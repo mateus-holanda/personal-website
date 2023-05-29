@@ -67,8 +67,8 @@ export function Hero() {
             {fourthText && (
               <TypeAnimation
                 cursor={false}
-                className="hidden sm:block"
-                sequence={['with React, Node, React Native and Python.', 500]}
+                className="sm:block"
+                sequence={[' with React, Node, React Native and Python.', 500]}
                 repeat={0}
               />
             )}

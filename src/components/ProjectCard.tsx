@@ -34,19 +34,19 @@ export function ProjectCard({
     <motion.div variants={fadeIn('up', 'spring', 0.5 * index, 0.75)}>
       <Tilt
         options={{ max: 45, scale: 1, speed: 450 }}
-        className="w-full rounded-2xl bg-tertiary p-5 sm:w-[360px]"
+        className="w-full rounded-2xl bg-tertiary p-5 sm:w-[490px]"
       >
-        <div className="relative h-[230px] w-full">
+        <div className="relative h-[260px] w-full">
           <Image
             src={image}
             alt={name}
-            className="h-full w-full rounded-2xl object-cover"
+            className="object-resize h-full w-full rounded-2xl"
           />
 
-          <div className="card-img_hover absolute right-0 top-0 m-3 flex flex-col justify-end gap-1">
+          <div className="card-img_hover absolute right-0 top-0 m-3 flex justify-end gap-1">
             <div
               onClick={() => window.open(sourceCodeUrl, '_blank')}
-              className="black-gradient flex h-10 w-10 cursor-pointer items-center justify-center rounded-full shadow-lg shadow-black-100"
+              className="black-gradient flex h-10 w-10 cursor-pointer items-center justify-center rounded-full shadow-lg shadow-black-100 hover:scale-110"
             >
               <Image
                 src={github}
@@ -55,8 +55,8 @@ export function ProjectCard({
               />
             </div>
             <div
-              onClick={() => {}}
-              className="green-pink-gradient flex h-10 w-10 cursor-pointer items-center justify-center rounded-full shadow-md shadow-[#bf61ff]"
+              onClick={() => window.open(sourceCodeUrl, '_blank')}
+              className="green-pink-gradient flex h-10 w-10 cursor-pointer items-center justify-center rounded-full shadow-md shadow-[#bf61ff] hover:scale-110"
             >
               <Image
                 src={rocket}

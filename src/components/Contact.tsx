@@ -65,8 +65,6 @@ function Contact() {
   async function handleSubmitForm(data: SendMessageFormData) {
     setIsLoading(true)
 
-    console.log(data)
-
     try {
       if (process.env) {
         await emailjs.send(
