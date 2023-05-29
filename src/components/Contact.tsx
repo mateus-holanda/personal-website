@@ -13,7 +13,7 @@ import { SectionWrapper } from '@/hoc'
 import AnimatedCheckIcon from './AnimatedCheckIcon'
 import { EarthCanvas } from './EarthCanvas'
 
-import { fadeIn, slideIn } from '@/utils/motion'
+import { slideIn } from '@/utils/motion'
 
 const sendMessageFormSchema = z.object({
   name: z.string().nonempty('Please, inform your name.'),
@@ -109,7 +109,7 @@ function Contact() {
         className="flex-[0.75] rounded-2xl bg-black-100 p-8"
       >
         <p className="text-[14px] uppercase tracking-wider text-secondary sm:text-[18px]">
-          Get in touch
+          Let&apos;s get in touch
         </p>
         <h3 className="text-white text-[30px] font-black xs:text-[40px] sm:text-[50px] md:text-[60px]">
           Contact.
@@ -154,7 +154,7 @@ function Contact() {
             <span className="text-white mb-4 font-medium">Your Message</span>
             <textarea
               rows={7}
-              placeholder="Let's get in touch and hopefully we can work together!"
+              placeholder="Send me a message with your thoughts and hopefully we can work together!"
               className="text-white outlined-none rounded-lg border-none bg-tertiary px-6 py-4 font-medium placeholder:text-secondary"
               {...register('message')}
             />
@@ -184,22 +184,22 @@ function Contact() {
 
       <motion.div
         ref={modalRef}
-        className={`flex-column text-white transf ${
+        className={`flex-column text-white transform ${
           modalIsOpen
             ? 'visible scale-100 duration-500 ease-in'
             : 'invisible hidden scale-0'
-        } absolute left-[30%] top-[35%] flex overflow-hidden rounded-3xl border bg-transparent text-center opacity-100 shadow-md backdrop-blur-[50px]`}
-        variants={fadeIn('down', 'spring', 0, 2)}
+        } absolute left-[15%] top-[50%] flex overflow-hidden rounded-3xl border bg-transparent text-center shadow-md backdrop-blur-[50px] lg:left-[30%] lg:top-[35%]`}
+        // variants={fadeIn('down', 'spring', 0, 2)}
       >
         <button
           onClick={() => setModalIsOpen(false)}
-          className="z-1 absolute right-0 top-0 flex h-11 w-11 cursor-pointer items-center justify-center rounded-bl-2xl bg-tertiary p-2 text-[30px] font-extrabold"
+          className="z-1 absolute right-0 top-0 flex h-9 w-9 cursor-pointer items-center justify-center rounded-bl-2xl bg-tertiary p-2 text-[18px] font-extrabold lg:h-11 lg:w-11 lg:text-[30px]"
         >
           X
         </button>
-        <div className="items-center justify-center px-24 py-10">
-          <h1 className="text-[48px] font-bold">Confirmation</h1>
-          <div className="mt-8 flex flex-col text-[18px] font-medium leading-4">
+        <div className="items-center justify-center px-4 py-6 lg:px-24 lg:py-10">
+          <h1 className="text-[32px] font-bold lg:text-[48px]">Confirmation</h1>
+          <div className="mt-8 flex flex-col text-[16px] font-medium leading-4 lg:text-[18px]">
             <span>Your message has been sent.</span>
             <br />
             <span>I&apos;ll reply as soon as possible.</span>

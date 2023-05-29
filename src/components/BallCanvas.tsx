@@ -4,13 +4,14 @@
 import { Decal, Float, OrbitControls, Preload } from '@react-three/drei'
 import { Canvas, Vector3 } from '@react-three/fiber'
 import { StaticImageData } from 'next/image'
-import { Suspense, useMemo, useState } from 'react'
+import { Suspense, useEffect, useMemo, useState } from 'react'
 import * as THREE from 'three'
 
 import { CanvasLoader } from './CanvasLoader'
 
 interface BallProps {
   icon: StaticImageData
+  isMobile: boolean
   position: Vector3
   onHover: () => void
 }
@@ -22,13 +23,13 @@ interface BallCanvasProps {
   }>
 }
 
-function Ball({ icon, position, onHover }: BallProps) {
+function Ball({ icon, isMobile, position, onHover }: BallProps) {
   const decal = useMemo(() => new THREE.TextureLoader().load(icon.src), [icon])
 
   return (
     <Float
       speed={2}
-      rotationIntensity={1}
+      rotationIntensity={isMobile ? 0.35 : 1}
       floatIntensity={0.5}
       floatingRange={[-0.005, 0.005]}
     >
@@ -39,7 +40,7 @@ function Ball({ icon, position, onHover }: BallProps) {
         onPointerLeave={() => onHover()}
         castShadow
         receiveShadow
-        scale={1.3}
+        scale={isMobile ? 1 : 1.3}
         position={position}
       >
         <icosahedronGeometry args={[1, 10]} />
@@ -47,7 +48,7 @@ function Ball({ icon, position, onHover }: BallProps) {
         <Decal
           position={[0, 0, 1]}
           rotation={[2 * Math.PI, 0, 6.25]}
-          scale={1.2}
+          scale={isMobile ? 1.1 : 1.2}
           map={decal}
           flatShading
         />
@@ -59,12 +60,31 @@ function Ball({ icon, position, onHover }: BallProps) {
 export function BallCanvas({ technologies }: BallCanvasProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [techName, setTechName] = useState('')
+  const [isMobile, setIsMobile] = useState(false)
+
+  function handleMediaQueryChange(event: MediaQueryListEvent) {
+    setIsMobile(event.matches)
+  }
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 500px)')
+
+    setIsMobile(mediaQuery.matches)
+
+    mediaQuery.addEventListener('change', handleMediaQueryChange)
+
+    return () => {
+      mediaQuery.removeEventListener('change', handleMediaQueryChange)
+    }
+  }, [])
 
   return (
     <>
-      <div className="text-white violet-gradient absolute right-0 m-20 flex h-8 items-center justify-end rounded-md font-bold">
-        {isOpen && techName && <div className="p-3">{techName}</div>}
-      </div>
+      {!isMobile && (
+        <div className="text-white violet-gradient absolute right-0 m-20 flex h-8 items-center justify-end rounded-md font-bold">
+          {isOpen && techName && <div className="p-3">{techName}</div>}
+        </div>
+      )}
       <Canvas
         frameloop="always"
         shadows
@@ -83,11 +103,16 @@ export function BallCanvas({ technologies }: BallCanvasProps) {
                 <Ball
                   key={`tech-${technology.name}`}
                   icon={technology.icon}
+                  isMobile={isMobile}
+                  position={
+                    isMobile
+                      ? [col * 3 - 4.5, row * 3 - 9, -4]
+                      : [col * 6 - 9, row * 3 - 9, -7]
+                  }
                   onHover={() => {
                     setIsOpen(!isOpen)
                     setTechName(technology.name)
                   }}
-                  position={[col * 6 - 9, row * 3 - 9, -7]}
                 />
               )
             })}

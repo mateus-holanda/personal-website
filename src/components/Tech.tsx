@@ -27,7 +27,7 @@ function Tech() {
         variants={slideIn('up', 'spring', 0.3, 2)}
         className="flex justify-center"
       >
-        <div className="h-[1000px] w-full">
+        <div className="h-[600px] w-full lg:h-[1000px]">
           <BallCanvas technologies={technologies} />
         </div>
       </motion.div>
