@@ -1,3 +1,5 @@
+import { Analytics } from '@vercel/analytics/react'
+
 import About from '@/components/About'
 import Contact from '@/components/Contact'
 import Experience from '@/components/Experience'
@@ -10,19 +12,22 @@ import Testimonials from '@/components/Testimonials'
 
 export default function Home() {
   return (
-    <div className="relative z-0 bg-primary">
-      <div className="bg-[url(../assets/herobg.png)] bg-cover bg-center bg-no-repeat">
-        <Navbar />
-        <Hero />
-      </div>
+    <>
+      <div className="relative z-0 bg-primary">
+        <div className="bg-[url(../assets/herobg.png)] bg-cover bg-center bg-no-repeat">
+          <Navbar />
+          <Hero />
+        </div>
 
-      <About />
-      <Experience />
-      <Tech />
-      <Projects />
-      <Testimonials />
-      <Contact />
-      <StarsCanvas />
-    </div>
+        <About />
+        <Experience />
+        <Tech />
+        <Projects />
+        <Testimonials />
+        <Contact />
+        <StarsCanvas />
+      </div>
+      <Analytics />
+    </>
   )
 }

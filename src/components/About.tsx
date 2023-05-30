@@ -12,7 +12,7 @@ import { fadeIn, textVariant } from '@/utils/motion'
 
 function About() {
   return (
-    <>
+    <div className="mb-28">
       <motion.div variants={textVariant()}>
         <p className="text-[14px] uppercase tracking-wider text-secondary sm:text-[18px]">
           Introduction
@@ -46,7 +46,7 @@ function About() {
           />
         ))}
       </div>
-    </>
+    </div>
   )
 }
 
