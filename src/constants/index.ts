@@ -395,7 +395,7 @@ export const testimonials = [
   },
   {
     description:
-      "After Mateus optimized our paid social campaigns, our traffic increased by 30%. We can't thank him enough!",
+      "After Mateus optimized our paid social campaigns, our traffic increased by almost 30%. We can't thank him enough!",
     name: 'Gustado Stein',
     designation: 'Head of Growth',
     company: 'Quero Educação',
