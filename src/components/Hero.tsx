@@ -28,7 +28,7 @@ export function Hero() {
           <p className="mt-2 text-[16px] font-medium text-[#dfd9ff] xs:text-[20px] sm:text-[26px] lg:text-[30px] lg:leading-[40px]">
             <TypeAnimation
               cursor={false}
-              sequence={['I develop', 100, () => setSecondText(true)]}
+              sequence={['I develop', 50, () => setSecondText(true)]}
               repeat={0}
             />
 
@@ -38,13 +38,13 @@ export function Hero() {
                 className="text-[#915eff]"
                 sequence={[
                   ' User Interfaces',
-                  500,
-                  ' Web Applications',
-                  500,
-                  ' Mobile Applications',
-                  500,
-                  ' ',
                   100,
+                  ' Web Applications',
+                  100,
+                  ' Mobile Applications',
+                  100,
+                  ' ',
+                  10,
                   () => setThirdText(true),
                 ]}
                 repeat={0}
@@ -57,7 +57,7 @@ export function Hero() {
                 className="text-[#915eff]"
                 sequence={[
                   'User Interfaces, Web and Mobile Applications',
-                  500,
+                  100,
                   () => setFourthText(true),
                 ]}
                 repeat={0}
@@ -68,7 +68,7 @@ export function Hero() {
               <TypeAnimation
                 cursor={false}
                 className="sm:block"
-                sequence={[' with React, Node, React Native and Python.', 500]}
+                sequence={[' with React, Node, React Native and Python.', 200]}
                 repeat={0}
               />
             )}
